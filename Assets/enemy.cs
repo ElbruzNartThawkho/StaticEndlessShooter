@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject bullet;
     public float moveSpeed = 3f;
     private Rigidbody2D rb;
@@ -14,6 +14,7 @@ public class enemy : MonoBehaviour
     public HealthBar healthBar;
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         currentHealth = maxHeatlh;
         healthBar.SetMaxHealth(maxHeatlh);
         rb = this.GetComponent<Rigidbody2D>();
